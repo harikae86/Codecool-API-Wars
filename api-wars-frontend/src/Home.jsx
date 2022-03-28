@@ -3,10 +3,10 @@ import { useEffect } from "react";
 import { useState } from "react";
 
 // MUI imports
+import { withStyles } from "@material-ui/core/styles";
 import Table from "@mui/material/Table";
 import TableBody from "@mui/material/TableBody";
 import TableCell from "@mui/material/TableCell";
-import TableContainer from "@mui/material/TableContainer";
 import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
@@ -15,9 +15,25 @@ import { ButtonGroup, Grid, Typography } from "@mui/material";
 
 import CustomModal from "./CustomModal";
 
+const styles = (theme) => ({
+  root: {
+    display: "flex",
+    marginTop: theme.spacing.unit * 3,
+    overflowX: "hidden",
+  },
+  table: {
+    minWidth: 340,
+  },
+  tableCell: {
+    paddingRight: 4,
+    paddingLeft: 5,
+  },
+});
+
 const Home = (props) => {
   const [planets, setPlanets] = useState([]);
   const [page, setPage] = useState(1);
+  const { classes } = props;
 
   useEffect(() => {
     fetch(`https://swapi.dev/api/planets/?page=${page}`)
@@ -51,9 +67,9 @@ const Home = (props) => {
       });
   };
 
-  const style = {
-    color: props.theme.palette.primary.light,
-  };
+  // const style = {
+  //   color: props.theme.palette.primary.light,
+  // };
 
   return (
     <div>
@@ -74,33 +90,41 @@ const Home = (props) => {
           Next
         </Button>
       </ButtonGroup>
-      <Grid
-        container
-        direction="column"
-        alignItems="center"
-        justifyContent="center"
-      >
-        <TableContainer
+      <Paper className={classes.root} xs={12}>
+        <Grid
+          item
+          xs={12}
+          container
+          direction="column"
+          alignItems="center"
+          justifyContent="center"
+        >
+          {/* <TableContainer
           component={Paper}
           className="container"
           color="white"
           sx={{ mx: "auto", maxWidth: 1000, p: 1, m: 1 }}
-        >
-          <Table sx={{ minWidth: 650 }} aria-label="simple table">
+        > */}
+          <Table className={classes.table}>
             <TableHead>
               <TableRow>
-                <TableCell>Name</TableCell>
-                <TableCell>Diameter</TableCell>
-                <TableCell>Climate</TableCell>
-                <TableCell>Terrain</TableCell>
-                <TableCell>Surface Water Percentage</TableCell>
-                <TableCell>Population</TableCell>
-                <TableCell>Residents</TableCell>
+                <TableCell className={classes.tableCell}>Name</TableCell>
+                <TableCell className={classes.tableCell}>Diameter</TableCell>
+                <TableCell className={classes.tableCell}>Climate</TableCell>
+                <TableCell className={classes.tableCell}>Terrain</TableCell>
+                <TableCell className={classes.tableCell}>
+                  Surface Water Percentage
+                </TableCell>
+                <TableCell className={classes.tableCell}>Population</TableCell>
+                <TableCell className={classes.tableCell}>Residents</TableCell>
               </TableRow>
             </TableHead>
             <TableBody>
               {planets.results?.map((planet) => (
                 <TableRow
+                  component="th"
+                  scope="row"
+                  className={classes.TableCell}
                   key={planet.name}
                   sx={{
                     "&:last-child td, &:last-child th": {
@@ -108,35 +132,44 @@ const Home = (props) => {
                     },
                   }}
                 >
-                  <TableCell component="th" scope="row">
+                  <TableCell
+                    component="th"
+                    scope="row"
+                    className={classes.tableCell}
+                  >
                     {planet.name}
                   </TableCell>
-                  <TableCell>{`${numberWithCommas(
+                  <TableCell className={classes.tableCell}>{`${numberWithCommas(
                     planet.diameter
                   )} km`}</TableCell>
-                  <TableCell>{planet.climate}</TableCell>
-                  <TableCell>{planet.terrain}</TableCell>
-                  <TableCell>
+                  <TableCell className={classes.tableCell}>
+                    {planet.climate}
+                  </TableCell>
+                  <TableCell className={classes.tableCell}>
+                    {planet.terrain}
+                  </TableCell>
+                  <TableCell className={classes.tableCell}>
                     {planet.surface_water === "unknown"
                       ? planet.surface_water
                       : `${planet.surface_water}%`}
                   </TableCell>
-                  <TableCell>
+                  <TableCell className={classes.tableCell}>
                     {planet.population === "unknown"
                       ? planet.population
                       : `${numberWithCommas(planet.population)} people`}
                   </TableCell>
-                  <TableCell>
+                  <TableCell className={classes.tableCell}>
                     <CustomModal planet={planet} theme={props.theme} />
                   </TableCell>
                 </TableRow>
               ))}
             </TableBody>
           </Table>
-        </TableContainer>
-      </Grid>
+          {/* </TableContainer> */}
+        </Grid>
+      </Paper>
     </div>
   );
 };
 
-export default Home;
+export default withStyles(styles)(Home);

@@ -26,21 +26,3 @@ body {
   margin-top: 20px;
   text-align: center;
 }
-
-tr {
-  height: 40px !important;
-}
-
-th {
-  max-width: 125px;
-  padding: 0 !important;
-  white-space: wrap;
-  word-wrap: break-word;
-  text-align: center !important;
-}
-
-td {
-  height: 40px !important;
-  padding: 5px !important;
-  text-align: center !important;
-}
