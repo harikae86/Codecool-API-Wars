@@ -13,12 +13,12 @@ import Paper from "@mui/material/Paper";
 import Button from "@mui/material/Button";
 import { ButtonGroup, Grid, Typography } from "@mui/material";
 
-import CustomModal from "./CustomModal";
+import CustomModal from "./components/CustomModal";
 
 const styles = (theme) => ({
   root: {
     display: "flex",
-    marginTop: theme.spacing.unit * 3,
+    marginTop: theme.spacing(3),
     overflowX: "hidden",
   },
   table: {
@@ -99,12 +99,6 @@ const Home = (props) => {
           alignItems="center"
           justifyContent="center"
         >
-          {/* <TableContainer
-          component={Paper}
-          className="container"
-          color="white"
-          sx={{ mx: "auto", maxWidth: 1000, p: 1, m: 1 }}
-        > */}
           <Table className={classes.table}>
             <TableHead>
               <TableRow>
@@ -133,7 +127,7 @@ const Home = (props) => {
                   }}
                 >
                   <TableCell
-                    component="th"
+                    component="tr"
                     scope="row"
                     className={classes.tableCell}
                   >
@@ -165,7 +159,6 @@ const Home = (props) => {
               ))}
             </TableBody>
           </Table>
-          {/* </TableContainer> */}
         </Grid>
       </Paper>
     </div>
