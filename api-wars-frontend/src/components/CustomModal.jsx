@@ -1,43 +1,19 @@
-import React, { useEffect } from "react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
-import Modal from "@mui/material/Modal";
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
-import { Typography } from "@mui/material";
-import Table from "@mui/material/Table";
 import Grid from "@mui/material/Grid";
+import Modal from "@mui/material/Modal";
+import Table from "@mui/material/Table";
 import TableBody from "@mui/material/TableBody";
 import TableCell from "@mui/material/TableCell";
-import TableHead from "@mui/material/TableHead";
 import TableContainer from "@mui/material/TableContainer";
+import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
-import { withStyles, useTheme, makeStyles } from "@material-ui/core/styles";
-
-const useStyles = makeStyles((theme) => ({
-  navlinks: {
-    marginLeft: theme.spacing(5),
-    display: "flex",
-  },
-  logo: {
-    flexGrow: "1",
-    cursor: "pointer",
-  },
-  link: {
-    textDecoration: "none",
-    color: "black",
-    fontSize: "20px",
-    marginLeft: theme.spacing(20),
-    "&:hover": {
-      color: theme.palette.primary.dark,
-      borderBottom: "1px solid white",
-    },
-  },
-}));
+import Typography from "@mui/material/Typography";
 
 const CustomModal = (props) => {
   const { planet } = props;
-  const classes = useStyles();
 
   const [open, setOpen] = useState(false);
   const [residents, setResidents] = useState([]);

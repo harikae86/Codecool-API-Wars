@@ -1,13 +1,11 @@
 import { useEffect } from "react";
 
+import Grid from "@mui/material/Grid";
 import Table from "@mui/material/Table";
 import TableBody from "@mui/material/TableBody";
 import TableCell from "@mui/material/TableCell";
 import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
-import TableContainer from "@mui/material/TableContainer";
-import Grid from "@mui/material/Grid";
-import Paper from "@mui/material/Paper";
 import { withStyles } from "@material-ui/core/styles";
 import CustomModal from "./CustomModal";
 

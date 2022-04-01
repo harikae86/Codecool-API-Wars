@@ -1,15 +1,10 @@
-import React from "react";
-import { useEffect } from "react";
 import { useState } from "react";
 
-// MUI imports
-import { withStyles, useTheme, makeStyles } from "@material-ui/core/styles";
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
-import { ButtonGroup, Grid, Typography } from "@mui/material";
-import CustomModal from "./components/CustomModal";
-import { TableContainer } from "@material-ui/core";
+import ButtonGroup from "@mui/material/ButtonGroup";
 import TableComponent from "./components/TableComponent";
+import Typography from "@mui/material/Typography";
 
 const Home = (props) => {
   const [planets, setPlanets] = useState([]);
@@ -34,7 +29,7 @@ const Home = (props) => {
   };
 
   return (
-    <div style={{ width: "100%" }}>
+    <div style={{ width: "100%", paddingTop: "7rem" }}>
       <Box sx={{ my: 2, mx: "auto", width: "70%", textAlign: "center" }}>
         <Typography variant="h3" style={{ pt: 3 }}>
           Star Wars Universe Planets

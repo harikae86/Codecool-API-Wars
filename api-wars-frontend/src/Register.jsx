@@ -1,18 +1,14 @@
 import { useState } from "react";
-
-// MUI
+import { useNavigate } from "react-router-dom";
 
 import Box from "@mui/material/Box";
+import Button from "@mui/material/Button";
 import FilledInput from "@mui/material/FilledInput";
 import FormControl from "@mui/material/FormControl";
-import InputLabel from "@mui/material/InputLabel";
-import Button from "@mui/material/Button";
 import FormHelperText from "@mui/material/FormHelperText";
-import { useNavigate } from "react-router-dom";
+import InputLabel from "@mui/material/InputLabel";
+import Grid from "@mui/material/Grid";
 import Typography from "@mui/material/Typography";
-
-// grid
-import { Grid } from "@mui/material";
 
 const signup = (userName, password) => {
   let status = true;

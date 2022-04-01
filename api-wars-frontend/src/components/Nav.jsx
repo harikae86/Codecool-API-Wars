@@ -9,7 +9,7 @@ const Nav = (props) => {
   return isMobile ? (
     <DrawerComponent user={props.user} logOut={props.logOut} />
   ) : (
-    <div style={{ paddingBottom: "6rem", textAlign: "center" }}>
+    <div>
       <Menu user={props.user} logOut={props.logOut} />
     </div>
   );

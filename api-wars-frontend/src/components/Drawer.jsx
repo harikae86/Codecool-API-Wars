@@ -1,15 +1,14 @@
-// React imports
 import { useState } from "react";
 import { Link } from "react-router-dom";
-// MUI imports
+
 import Drawer from "@mui/material/Drawer";
+import IconButton from "@mui/material/IconButton";
 import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
 import ListItemText from "@mui/material/ListItemText";
-import IconButton from "@mui/material/IconButton";
 import MenuIcon from "@material-ui/icons/Menu";
-import { makeStyles } from "@material-ui/core";
 import Typography from "@mui/material/Typography";
+import { makeStyles } from "@material-ui/core";
 
 const useStyles = makeStyles(() => ({
   link: {

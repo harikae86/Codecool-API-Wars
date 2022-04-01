@@ -6,7 +6,6 @@ import Register from "./Register";
 import Nav from "./components/Nav";
 import "./index.css";
 
-// mui
 import { ThemeProvider } from "@mui/material";
 import { createTheme } from "@mui/material/styles";
 import CssBaseline from "@mui/material/CssBaseline";

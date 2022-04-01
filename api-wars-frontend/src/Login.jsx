@@ -1,22 +1,19 @@
 import { useState } from "react";
 
-// MUI
-
 import Box from "@mui/material/Box";
+import Button from "@mui/material/Button";
 import FilledInput from "@mui/material/FilledInput";
 import FormControl from "@mui/material/FormControl";
-import InputLabel from "@mui/material/InputLabel";
-import Button from "@mui/material/Button";
 import FormHelperText from "@mui/material/FormHelperText";
-import { useNavigate } from "react-router-dom";
-import { Grid } from "@mui/material";
-import { Typography } from "@mui/material";
+import Grid from "@mui/material/Grid";
+import InputLabel from "@mui/material/InputLabel";
+import Typography from "@mui/material/Typography";
 
 const Login = (props) => {
   const [userName, setUserName] = useState("");
   const [password, setPassword] = useState("");
   const [helperText, setHelperText] = useState("");
-  const [error, setError] = useState(null);
+  const [setError] = useState(null);
   const [loading, setLoading] = useState(false);
 
   const signin = (userName, password) => {
