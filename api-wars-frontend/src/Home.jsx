@@ -34,9 +34,11 @@ const Home = (props) => {
   };
 
   return (
-    <div>
-      <Box sx={{ my: 2, mx: "auto", textAlign: "center" }}>
-        <Typography variant="h2"> Star Wars Universe Planets</Typography>
+    <div style={{ width: "100%" }}>
+      <Box sx={{ my: 2, mx: "auto", width: "70%", textAlign: "center" }}>
+        <Typography variant="h3" style={{ pt: 3 }}>
+          Star Wars Universe Planets
+        </Typography>
       </Box>
       <ButtonGroup
         variant="contained"

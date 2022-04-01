@@ -1,3 +1,4 @@
+import React, { useState } from "react";
 import { Routes, Route } from "react-router-dom";
 import Home from "./Home";
 import Login from "./Login";
@@ -8,20 +9,20 @@ import "./index.css";
 // mui
 import { ThemeProvider } from "@mui/material";
 import { createTheme } from "@mui/material/styles";
-import { useState } from "react";
+import CssBaseline from "@mui/material/CssBaseline";
 
 const theme = createTheme({
   palette: {
     primary: {
-      main: "#eeef2f",
+      main: "#ffab00",
       light: "#fff",
       dark: "#cfd8dc",
       text: {
-        primary: "#fff",
+        primary: "#262626",
       },
     },
     secondary: {
-      main: "#262626",
+      main: "#424242",
     },
     warning: {
       main: "#b71c1c",
@@ -29,13 +30,34 @@ const theme = createTheme({
     background: {
       paper: "#4e4e4e",
     },
+    text: {
+      primary: "#262626",
+      secondary: "#4e4e4e",
+    },
   },
   typography: {
     fontFamily: "Quicksand",
-    fontWeightLight: 400,
-    fontWeightRegular: 500,
-    fontWeightMedium: 600,
-    fontWeightBold: 700,
+    h1: {
+      fontFamily: "IBM Plex Mono",
+    },
+    h2: {
+      fontFamily: "Droid Serif",
+    },
+    h3: {
+      fontFamily: "IBM Plex Mono",
+    },
+    h4: {
+      fontFamily: "IBM Plex Mono",
+    },
+    h5: {
+      fontFamily: "IBM Plex Mono",
+    },
+    h6: {
+      fontFamily: "IBM Plex Mono",
+    },
+    button: {
+      fontFamily: "Bungee",
+    },
   },
   spacing: [0, 4, 8, 16, 32, 64],
 });
@@ -58,11 +80,12 @@ function App() {
     setUser();
   };
   return (
-    <ThemeProvider theme={theme}>
-      <div className="App">
+    <React.Fragment>
+      <CssBaseline />
+      <ThemeProvider theme={theme}>
         <Nav user={user} logOut={logOut} />
         <Routes>
-          <Route path="/" element={<Home theme={theme} />} />
+          <Route path="/" element={<Home />} />
           <Route
             path="/register"
             element={
@@ -80,8 +103,8 @@ function App() {
             }
           />
         </Routes>
-      </div>
-    </ThemeProvider>
+      </ThemeProvider>
+    </React.Fragment>
   );
 }
 

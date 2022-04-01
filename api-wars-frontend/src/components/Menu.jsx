@@ -4,8 +4,16 @@ import App from "../App";
 
 const useStyles = makeStyles((theme) => ({
   navlinks: {
-    marginLeft: theme.spacing(5),
     display: "flex",
+    alignItems: "center",
+    justifyContent: "space-evenly",
+    position: "fixed",
+    top: 0,
+    left: 0,
+    backgroundColor: "#ffab00",
+    height: "100px",
+    width: "100%",
+    margin: 0,
   },
   logo: {
     flexGrow: "1",
@@ -15,7 +23,6 @@ const useStyles = makeStyles((theme) => ({
     textDecoration: "none",
     color: "black",
     fontSize: "20px",
-    marginLeft: theme.spacing(20),
     "&:hover": {
       color: theme.palette.primary.dark,
       borderBottom: "1px solid white",
@@ -25,6 +32,7 @@ const useStyles = makeStyles((theme) => ({
 
 const Menu = (props) => {
   const classes = useStyles();
+
   return (
     <div className={classes.navlinks}>
       <Link to="/" className={classes.link}>

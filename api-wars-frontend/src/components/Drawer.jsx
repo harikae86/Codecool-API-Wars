@@ -18,7 +18,8 @@ const useStyles = makeStyles(() => ({
     fontSize: "1.2rem",
   },
   icon: {
-    color: "red",
+    color: "#262626",
+    fontSize: "2rem",
   },
   background: {
     paper: "#4e4e4e",
